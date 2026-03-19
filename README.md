@@ -5,12 +5,10 @@
 <p>
 一款专业的 AI 大模型安全评估与测试平台，支持多种安全标准和自动化测试流程。
 <p>
-
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue.svg)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-19.2-61dafb.svg)](https://reactjs.org/)
 [![Express](https://img.shields.io/badge/Express-5.2-green.svg)](https://expressjs.com/)
-[![License](https://img.shields.io/badge/license-AGPL--3.0-yellow)]()
-
+[![License](https://img.shields.io/badge/license-AGPL--3.0-yellow)](https://github.com/AscendGrace/ProAI/blob/main/LICENSE)
 </div>
 
 ## 目录
@@ -24,6 +22,7 @@
 - [贡献指南](#贡献指南)
 - [开源协议](#开源协议)
 - [特别鸣谢](#特别鸣谢)
+- [关于我们][#关于我们]
 
 ##  功能特色
 
@@ -185,3 +184,9 @@ MCP 扫描器采用多阶段流水线架构：
 ## 特别鸣谢
 本项目通用测试集使用 Rogue Security 提供的数据集：
 https://huggingface.co/datasets/rogue-security/prompt-injections-benchmark
+
+## 关于我们
+
+华清未央科技有限公司成立于2023年12月。是全球首家机器语言大模型供应商。公司秉持着做网络空间智能体的愿景，专注突破人工智能技术赋能网络空间，致力于提供软件功能开发、性能优化、安全分析的标准化、智能化解决方案。公司和团队在软件人工分析、自动分析、智能分析方面深耕十余年，研究成果处于世界领先水平。
+
+[![Logo](img/logo.png)](https://huaqing.org.cn)
