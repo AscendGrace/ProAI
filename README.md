@@ -180,6 +180,8 @@ MCP 扫描器采用多阶段流水线架构：
 
 ##  开源协议
 
+[AGPL-3.0 License](LICENSE) © 2026 ProAI Contributors
+
 ## 特别鸣谢
 本项目通用测试集使用 Rogue Security 提供的数据集：
 https://huggingface.co/datasets/rogue-security/prompt-injections-benchmark
