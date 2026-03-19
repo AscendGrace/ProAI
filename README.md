@@ -1,17 +1,19 @@
 <div align="center">
-
 <h1> 🛡️ ProAI 大模型安全评估平台 </h1>
+</div>
 
 <p>
 ProAI 是一个聚焦于 AI 安全测试与代码风险审计的开源平台，适用于大模型安全评估、提示词测试集管理，以及 MCP 源码包的自动化扫描分析。
 项目同时提供前端操作台与后端评估服务，支持 OpenAI / Ollama 模型接入，能够帮助团队更快完成模型风险测试、漏洞发现、评估留档和结果复盘。
 <p>
 
+<div align="center">
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue.svg)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-19.2-61dafb.svg)](https://reactjs.org/)
 [![Express](https://img.shields.io/badge/Express-5.2-green.svg)](https://expressjs.com/)
 [![License](https://img.shields.io/badge/license-AGPL--3.0-yellow)](https://github.com/AscendGrace/ProAI/blob/main/LICENSE)
+
 </div>
 
 - 双评估能力：同时支持大模型安全评测与 MCP 服务代码安全扫描
