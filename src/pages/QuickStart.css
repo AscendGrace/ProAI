@@ -1,0 +1,72 @@
+/* QuickStart 页面样式 */
+
+.step-card {
+  display: block;
+  background: #f6f8fa;
+  border-radius: 8px;
+  padding: 24px 28px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 200ms ease;
+  cursor: pointer;
+}
+
+.step-card:hover {
+  background: #eef1f4;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+}
+
+.step-card:active {
+  transform: translateY(0);
+}
+
+.step-card-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.step-number {
+  font-size: 28px;
+  font-weight: 700;
+  color: #8ACDF7;
+  font-family: 'JetBrains Mono', var(--font-mono);
+  line-height: 1;
+}
+
+.step-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.step-subtitle {
+  font-size: 14px;
+  color: var(--muted-foreground);
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+
+.step-description {
+  font-size: 13px;
+  color: var(--muted-foreground);
+  line-height: 1.8;
+  padding-top: 14px;
+  border-top: 1px solid #e1e4e8;
+}
+
+/* 自定义引导框样式 */
+.driver-popover {
+  max-width: 320px !important;
+}
+
+.driver-popover-title {
+  font-size: 15px !important;
+}
+
+.driver-popover-description {
+  font-size: 13px !important;
+}

@@ -1,0 +1,493 @@
+/* ========================================
+ * Layout Styles - GitHub/Stripe Style
+ * ======================================== */
+
+/* App Shell */
+.appShell {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+  background: transparent;
+  color: var(--foreground);
+  transition: grid-template-columns var(--transition-normal);
+}
+
+.appShell.collapsed {
+  grid-template-columns: 56px 1fr;
+}
+
+/* ========================================
+ * Sidebar
+ * ======================================== */
+.sidebar {
+  background: var(--app-sidebar-bg);
+  border-right: 1px solid var(--app-sidebar-border);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  transition: width var(--transition-normal);
+}
+
+.sidebar.collapsed {
+  width: 56px;
+  overflow: visible;
+}
+
+/* Collapsed flyout sub-menu */
+.navGroup {
+  position: relative;
+}
+
+.navFlyout {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  min-width: 140px;
+  padding: 6px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  z-index: 100;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.navGroup:hover .navFlyout {
+  display: flex;
+}
+
+.navFlyout .navItem {
+  padding: 8px 12px;
+  font-size: 13px;
+  justify-content: flex-start;
+}
+
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 12px;
+  border-bottom: 1px solid var(--app-sidebar-border);
+  min-height: 56px;
+}
+
+.sidebar.collapsed .sidebarHeader {
+  padding: 12px 8px;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  line-height: 1;
+}
+
+.brandLogo {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.brandText {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+  white-space: nowrap;
+  line-height: 32px;
+}
+
+.sidebar.collapsed .brandText {
+  display: none;
+}
+
+.collapseBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--muted-foreground);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.collapseBtn:hover {
+  background: var(--app-sidebar-item-hover-bg);
+  color: var(--foreground);
+}
+
+.sidebar.collapsed .collapseBtn {
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 8px;
+  flex: 1;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  color: var(--muted-foreground);
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.sidebar.collapsed .navItem {
+  padding: 10px;
+  justify-content: center;
+}
+
+.navIcon {
+  font-size: 16px;
+  flex-shrink: 0;
+  width: 20px;
+  text-align: center;
+}
+
+.navLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar.collapsed .navLabel {
+  display: none;
+}
+
+.navItem:hover {
+  background: var(--app-sidebar-item-hover-bg);
+  color: var(--foreground);
+  text-decoration: none;
+}
+
+.navItem.active {
+  background: var(--app-sidebar-item-active-bg);
+  border-color: transparent;
+  color: var(--app-sidebar-item-indicator);
+  font-weight: 600;
+  position: relative;
+}
+
+.navItem.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 20px;
+  background: var(--app-sidebar-item-indicator);
+  border-radius: 0 2px 2px 0;
+}
+
+/* ========================================
+ * Main Content
+ * ======================================== */
+.main {
+  padding: 24px 32px;
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+.pageTitle {
+  margin: 0 0 20px 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--foreground);
+  letter-spacing: -0.02em;
+}
+
+/* ========================================
+ * Cards
+ * ======================================== */
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.cardTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0;
+}
+
+/* ========================================
+ * Form Elements
+ * ======================================== */
+.input,
+.select,
+.textarea {
+  background: var(--card);
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  color: var(--foreground);
+  font-size: 14px;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: var(--ring);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.15);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--muted-foreground);
+}
+
+.textarea {
+  width: 100%;
+  min-height: 140px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.input {
+  min-width: 250px;
+}
+
+.select {
+  min-width: 220px;
+  cursor: pointer;
+}
+
+/* ========================================
+ * Buttons - 使用 index.css 中的全局样式
+ * ======================================== */
+
+/* ========================================
+ * Tables
+ * ======================================== */
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table th,
+.table td {
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  padding: 12px 16px;
+  vertical-align: top;
+}
+
+.table th {
+  color: var(--muted-foreground);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--secondary);
+}
+
+.table tbody tr {
+  transition: background-color var(--transition-fast);
+}
+
+.table tbody tr:hover {
+  background: var(--app-sidebar-item-hover-bg);
+}
+
+/* ========================================
+ * Badges
+ * ======================================== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  background: var(--secondary);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted-foreground);
+}
+
+.badge.success {
+  background: rgba(22, 163, 74, 0.1);
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.badge.danger {
+  background: rgba(220, 38, 38, 0.1);
+  border-color: var(--destructive);
+  color: var(--destructive);
+}
+
+.badge.warning {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: var(--warning);
+  color: var(--warning);
+}
+
+.badge.info {
+  background: rgba(9, 105, 218, 0.1);
+  border-color: var(--info);
+  color: var(--info);
+}
+
+/* ========================================
+ * Utility Classes
+ * ======================================== */
+.muted {
+  color: var(--muted-foreground);
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* ========================================
+ * Responsive Design
+ * ======================================== */
+@media (max-width: 960px) {
+  .appShell {
+    grid-template-columns: 1fr;
+  }
+
+  .appShell.collapsed {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: -240px;
+    top: 0;
+    width: 240px;
+    height: 100vh;
+    z-index: var(--z-appbar);
+    transition: left var(--transition-normal);
+    border-right: none;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .sidebar.collapsed {
+    width: 240px;
+    left: -240px;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .main {
+    padding: 16px;
+  }
+
+  .input {
+    min-width: 100%;
+  }
+
+  .select {
+    min-width: 100%;
+  }
+
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .cardGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================
+ * Dark Mode Specific Adjustments
+ * ======================================== */
+[data-theme='dark'] .card {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] .card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme='dark'] .input:focus,
+[data-theme='dark'] .select:focus,
+[data-theme='dark'] .textarea:focus {
+  box-shadow: 0 0 0 3px rgba(56, 139, 253, 0.2);
+}
+
+/* Page Transition Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mainContent > div {
+  animation: fadeIn 0.2s ease-out;
+}

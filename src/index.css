@@ -1,0 +1,533 @@
+/* ========================================
+ * Global Styles - GitHub/Stripe Style
+ * Professional, data-dense, blue-focused
+ * ======================================== */
+
+:root {
+  /* Typography - Stripe/GitHub style */
+  --app-font-base: 'ArialMT', Arial, 'Noto-Sans-SC', 'Noto Sans SC', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+
+  font-family: var(--app-font-base);
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light;
+
+  /* Z-index scale for layered components */
+  --z-banner: 1100;
+  --z-appbar: 1200;
+  --z-modal-backdrop: 1300;
+  --z-modal: 1310;
+  --z-dropdown: 1400;
+  --z-tooltip: 1500;
+
+  /* ========================================
+   * Design Tokens - Light Mode
+   * ======================================== */
+
+  /* Primary - Professional deep blue-gray (Stripe inspired) */
+  --primary: #1f2937;
+  --primary-hover: #111827;
+  --primary-foreground: #ffffff;
+
+  /* Accent - GitHub blue for interactive elements */
+  --accent: #0969da;
+  --accent-hover: #0550ae;
+  --accent-foreground: #ffffff;
+
+  /* Background - GitHub light gray */
+  --background: #f6f8fa;
+  --foreground: #1f2937;
+
+  /* Card - Pure white for content areas */
+  --card: #ffffff;
+  --card-foreground: #1f2937;
+
+  /* Secondary - Subtle gray for secondary actions */
+  --secondary: #f1f3f5;
+  --secondary-foreground: #1f2937;
+
+  /* Muted - For subtle backgrounds and disabled states */
+  --muted: #ebeef1;
+  --muted-foreground: #6b7280;
+
+  /* Border - Soft gray border (GitHub style) */
+  --border: #d0d7de;
+  --input-border: #d0d7de;
+  --ring: #0969da;
+
+  /* Semantic colors - Muted, professional */
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --success: #16a34a;
+  --success-foreground: #ffffff;
+  --warning: #f59e0b;
+  --warning-foreground: #ffffff;
+  --info: #0969da;
+  --info-foreground: #ffffff;
+
+  /* Radius - Smaller, more professional (GitHub style) */
+  --radius: 4px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+
+  /* Shadows - Stripe style (subtle, layered) */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 8px -2px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 12px 24px -4px rgba(0, 0, 0, 0.08), 0 8px 16px -4px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 24px 48px -8px rgba(0, 0, 0, 0.12), 0 16px 32px -8px rgba(0, 0, 0, 0.06);
+
+  /* Transition defaults */
+  --transition-fast: 150ms ease;
+  --transition-normal: 200ms ease;
+  --transition-slow: 300ms ease;
+
+  /* App shell backgrounds */
+  --app-shell-bg:
+    radial-gradient(circle at 12% 10%, rgba(9, 105, 218, 0.1), transparent 42%),
+    radial-gradient(circle at 90% 0%, rgba(56, 139, 253, 0.08), transparent 40%),
+    linear-gradient(180deg, #f8fbff, var(--background));
+
+  --app-header-bg: rgba(255, 255, 255, 0.78);
+  --app-header-backdrop: blur(10px);
+
+  --app-sidebar-bg: linear-gradient(
+    180deg,
+    rgba(9, 105, 218, 0.08),
+    rgba(9, 105, 218, 0.02) 42%,
+    rgba(255, 255, 255, 0)
+  );
+  --app-sidebar-border: rgba(13, 17, 23, 0.08);
+  --app-sidebar-item-active-bg: rgba(9, 105, 218, 0.12);
+  --app-sidebar-item-hover-bg: rgba(31, 41, 55, 0.06);
+  --app-sidebar-item-indicator: #0969da;
+
+  /* Legacy color variables for compatibility */
+  --background-color: #f6f8fa;
+  --text-color: #1f2937;
+  --link-color: #0969da;
+  --border-color: #d0d7de;
+  --pass-color: #16a34a;
+  --fail-color: #dc2626;
+
+  /* Typography settings */
+  font-style: normal;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ========================================
+ * Dark Mode
+ * ======================================== */
+:root[data-theme='dark'],
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  /* Background - GitHub dark */
+  --background: #0d1117;
+  --foreground: #e6edf3;
+
+  /* Card - Slightly elevated */
+  --card: #161b22;
+  --card-foreground: #e6edf3;
+
+  /* Primary - Brighter in dark mode */
+  --primary: #388bfd;
+  --primary-hover: #58a6ff;
+  --primary-foreground: #ffffff;
+
+  /* Accent */
+  --accent: #388bfd;
+  --accent-hover: #58a6ff;
+  --accent-foreground: #ffffff;
+
+  /* Secondary */
+  --secondary: #21262d;
+  --secondary-foreground: #e6edf3;
+
+  /* Muted */
+  --muted: #1c2128;
+  --muted-foreground: #7d8590;
+
+  /* Border - Subtle dark border */
+  --border: #30363d;
+  --input-border: #30363d;
+  --ring: #388bfd;
+
+  /* Semantic colors - Brighter for dark mode */
+  --destructive: #f85149;
+  --success: #3fb950;
+  --warning: #d29922;
+  --info: #58a6ff;
+
+  /* App shell backgrounds */
+  --app-shell-bg:
+    radial-gradient(circle at 12% 10%, rgba(56, 139, 253, 0.2), transparent 44%),
+    radial-gradient(circle at 90% 0%, rgba(56, 139, 253, 0.12), transparent 40%),
+    linear-gradient(180deg, #0b1220, #0d1117);
+
+  --app-header-bg: rgba(13, 17, 23, 0.72);
+  --app-sidebar-bg: linear-gradient(
+    180deg,
+    rgba(56, 139, 253, 0.14),
+    rgba(56, 139, 253, 0.05) 45%,
+    rgba(13, 17, 23, 0)
+  );
+  --app-sidebar-border: rgba(230, 237, 243, 0.08);
+  --app-sidebar-item-active-bg: rgba(56, 139, 253, 0.16);
+  --app-sidebar-item-hover-bg: rgba(230, 237, 243, 0.06);
+  --app-sidebar-item-indicator: #388bfd;
+
+  /* Legacy color variables */
+  --background-color: #0d1117;
+  --text-color: #e6edf3;
+  --link-color: #58a6ff;
+  --border-color: #30363d;
+  --pass-color: #3fb950;
+  --fail-color: #f85149;
+}
+
+/* ========================================
+ * Base Styles
+ * ======================================== */
+html {
+  font-size: 16px;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  background: transparent;
+}
+
+* {
+  box-sizing: border-box;
+  border-color: var(--border);
+}
+
+/* ========================================
+ * Typography
+ * ======================================== */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* ========================================
+ * Scrollbar Styles
+ * ======================================== */
+html,
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--muted) transparent;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background-color: var(--muted);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ========================================
+ * Focus Styles
+ * ======================================== */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* ========================================
+ * Touch Interaction Improvements
+ * ======================================== */
+@media (pointer: coarse) {
+  button,
+  [role='button'],
+  a,
+  input[type='checkbox'],
+  input[type='radio'],
+  select {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ========================================
+ * Button Styles - ProAI V1.0 Style
+ * GitHub/Stripe professional design
+ * ======================================== */
+
+/* Base button styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  white-space: nowrap;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  line-height: 1;
+  padding: 0 16px;
+  height: 36px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  border: 1px solid transparent;
+  outline: none;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+/* SVG icons inside buttons */
+.btn svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+/* Default button - Black (ProAI V1.0 style) */
+.btn {
+  background: #18181b;
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn:hover:not(:disabled) {
+  background: #09090b;
+}
+
+/* Accent button - GitHub blue */
+.btn.accent {
+  background: var(--accent);
+  color: var(--accent-foreground);
+  border-color: rgba(9, 105, 218, 0.2);
+}
+
+.btn.accent:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+/* Primary button alias */
+.btn.primary {
+  background: var(--accent);
+  color: var(--accent-foreground);
+  border-color: rgba(9, 105, 218, 0.2);
+}
+
+.btn.primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+/* Secondary button - Subtle gray */
+.btn.secondary {
+  background: var(--secondary);
+  color: var(--secondary-foreground);
+  border-color: var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn.secondary:hover:not(:disabled) {
+  background: var(--muted);
+  border-color: var(--muted-foreground);
+}
+
+/* Outline button - Border only */
+.btn.outline {
+  background: var(--card);
+  color: var(--foreground);
+  border-color: var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn.outline:hover:not(:disabled) {
+  background: var(--muted);
+  border-color: var(--muted-foreground);
+}
+
+/* Ghost button - No background */
+.btn.ghost {
+  background: transparent;
+  color: var(--foreground);
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.btn.ghost:hover:not(:disabled) {
+  background: var(--secondary);
+}
+
+/* Destructive/Danger button - Red */
+.btn.danger,
+.btn.destructive {
+  background: var(--destructive);
+  color: var(--destructive-foreground);
+  border-color: rgba(220, 38, 38, 0.2);
+}
+
+.btn.danger:hover:not(:disabled),
+.btn.destructive:hover:not(:disabled) {
+  background: #b91c1c;
+}
+
+/* Success button - Green */
+.btn.success {
+  background: var(--success);
+  color: var(--success-foreground);
+  border-color: rgba(22, 163, 74, 0.2);
+}
+
+.btn.success:hover:not(:disabled) {
+  background: #15803d;
+}
+
+/* Warning button - Amber */
+.btn.warning {
+  background: var(--warning);
+  color: var(--warning-foreground);
+  border-color: rgba(245, 158, 11, 0.2);
+}
+
+.btn.warning:hover:not(:disabled) {
+  background: #d97706;
+}
+
+/* Info button - Blue */
+.btn.info {
+  background: var(--info);
+  color: var(--info-foreground);
+  border-color: rgba(9, 105, 218, 0.2);
+}
+
+.btn.info:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+/* Link button - Text only */
+.btn.link {
+  background: transparent;
+  color: var(--accent);
+  border-color: transparent;
+  box-shadow: none;
+  padding: 0;
+  height: auto;
+}
+
+.btn.link:hover:not(:disabled) {
+  text-decoration: underline;
+  background: transparent;
+}
+
+/* Button sizes */
+.btn.sm {
+  height: 32px;
+  padding: 0 12px;
+  font-size: 12px;
+  border-radius: var(--radius-sm);
+}
+
+.btn.lg {
+  height: 40px;
+  padding: 0 24px;
+}
+
+.btn.xl {
+  height: 44px;
+  padding: 0 32px;
+  font-size: 16px;
+}
+
+/* Icon-only buttons */
+.btn.icon {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+}
+
+.btn.icon.sm {
+  width: 32px;
+  height: 32px;
+}
+
+.btn.icon.lg {
+  width: 40px;
+  height: 40px;
+}
+
+/* ========================================
+ * Print Styles
+ * ======================================== */
+@media print {
+  html {
+    background: white !important;
+    background-image: none !important;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    background-color: white !important;
+  }
+}

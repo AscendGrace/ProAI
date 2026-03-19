@@ -1,0 +1,543 @@
+/* ========================================
+ * Evaluations Page Styles
+ * GitHub/Stripe 风格评估管理页面
+ * ======================================== */
+
+.evaluationsPage {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* 页面头部 */
+.pageHeader {
+  margin-bottom: 24px;
+}
+
+.pageDescription {
+  color: var(--muted-foreground);
+  font-size: 14px;
+  margin: 4px 0 0 0;
+}
+
+/* ========================================
+ * 统计卡片
+ * ======================================== */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.statCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  text-align: center;
+}
+
+.statValue {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.statValue.success {
+  color: var(--success);
+}
+
+.statValue.warning {
+  color: var(--warning);
+}
+
+.statValue.danger {
+  color: var(--destructive);
+}
+
+.statLabel {
+  font-size: 13px;
+  color: var(--muted-foreground);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ========================================
+ * 工具栏
+ * ======================================== */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+}
+
+.toolbarLeft,
+.toolbarRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.searchBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  color: var(--muted-foreground);
+  pointer-events: none;
+}
+
+.searchInput {
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 8px 12px 8px 36px;
+  font-size: 14px;
+  color: var(--foreground);
+  width: 280px;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.15);
+}
+
+.searchInput::placeholder {
+  color: var(--muted-foreground);
+}
+
+/* 按钮样式使用全局 index.css 中的 .btn 样式 */
+
+/* ========================================
+ * 筛选标签
+ * ======================================== */
+.filterTabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+}
+
+.filterTab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--muted-foreground);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filterTab:hover {
+  background: var(--secondary);
+  color: var(--foreground);
+}
+
+.filterTab.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-foreground);
+}
+
+.filterCount {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 12px;
+}
+
+.filterTab:not(.active) .filterCount {
+  background: var(--muted);
+  color: var(--muted-foreground);
+}
+
+/* ========================================
+ * 错误提示
+ * ======================================== */
+.errorBanner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: rgba(220, 38, 38, 0.1);
+  border: 1px solid var(--destructive);
+  border-radius: var(--radius-md);
+  color: var(--destructive);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+/* ========================================
+ * 数据表格
+ * ======================================== */
+.tableCard {
+  padding: 0;
+  overflow: hidden;
+}
+
+.dataTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.dataTable th {
+  background: var(--secondary);
+  color: var(--muted-foreground);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.dataTable td {
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.dataTable tbody tr {
+  transition: background-color var(--transition-fast);
+}
+
+.dataTable tbody tr:hover {
+  background: var(--secondary);
+}
+
+.dataTable tbody tr.selected {
+  background: rgba(9, 105, 218, 0.08);
+}
+
+.dataTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* 列宽 */
+.checkboxCol {
+  width: 48px;
+  text-align: center;
+}
+
+.dateCol {
+  width: 140px;
+}
+
+.typeCol {
+  width: 100px;
+}
+
+.statusCol {
+  width: 140px;
+}
+
+.passRateCol {
+  width: 160px;
+}
+
+.actionsCol {
+  width: 100px;
+  text-align: right;
+}
+
+/* 日期显示 */
+.dateValue {
+  font-size: 14px;
+  color: var(--foreground);
+}
+
+.timeValue {
+  font-size: 12px;
+  color: var(--muted-foreground);
+  margin-top: 2px;
+}
+
+/* 任务名称 */
+.taskName {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--foreground);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.taskName:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.taskId {
+  font-size: 12px;
+  color: var(--muted-foreground);
+  margin-top: 4px;
+  font-family: var(--font-mono);
+}
+
+/* 错误文本 */
+.errorText {
+  font-size: 12px;
+  color: var(--destructive);
+  margin-top: 4px;
+}
+
+/* ========================================
+ * 徽章样式
+ * ======================================== */
+
+/* 状态徽章 */
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.statusBadge.success {
+  background: rgba(22, 163, 74, 0.1);
+  color: var(--success);
+  border: 1px solid var(--success);
+}
+
+.statusBadge.info {
+  background: rgba(9, 105, 218, 0.1);
+  color: var(--info);
+  border: 1px solid var(--info);
+}
+
+.statusBadge.warning {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--warning);
+  border: 1px solid var(--warning);
+}
+
+.statusBadge.danger {
+  background: rgba(220, 38, 38, 0.1);
+  color: var(--destructive);
+  border: 1px solid var(--destructive);
+}
+
+.statusBadge.default {
+  background: var(--secondary);
+  color: var(--muted-foreground);
+  border: 1px solid var(--border);
+}
+
+/* 类型徽章 */
+.typeBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 72px;
+  padding: 4px 10px;
+  border-radius: var(--radius-md);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.typeBadge.primary {
+  background: rgba(9, 105, 218, 0.1);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.typeBadge.secondary {
+  background: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+  border: 1px solid #8b5cf6;
+}
+
+.typeBadge.tertiary {
+  background: rgba(236, 72, 153, 0.1);
+  color: #ec4899;
+  border: 1px solid #ec4899;
+}
+
+.typeBadge.default {
+  background: var(--secondary);
+  color: var(--muted-foreground);
+  border: 1px solid var(--border);
+}
+
+/* ========================================
+ * 通过率进度条
+ * ======================================== */
+.passRateCell {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.passRateHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.passRateValue {
+  font-size: 14px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.passRateValue.good {
+  color: var(--success);
+}
+
+.passRateValue.warn {
+  color: var(--warning);
+}
+
+.passRateValue.bad {
+  color: var(--destructive);
+}
+
+.passRateCheck {
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+
+.passRateBarBg {
+  height: 6px;
+  background: var(--muted);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.passRateBarFill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width var(--transition-normal);
+}
+
+.passRateBarFill.good {
+  background: var(--success);
+}
+
+.passRateBarFill.warn {
+  background: var(--warning);
+}
+
+.passRateBarFill.bad {
+  background: var(--destructive);
+}
+
+/* ========================================
+ * 操作按钮
+ * ======================================== */
+.actionButtons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.dataTable tbody tr:hover .actionButtons {
+  opacity: 1;
+}
+
+.actionBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--muted-foreground);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.actionBtn:hover {
+  background: var(--secondary);
+  color: var(--foreground);
+}
+
+.actionBtn.danger:hover {
+  background: rgba(220, 38, 38, 0.1);
+  color: var(--destructive);
+}
+
+/* ========================================
+ * 空状态
+ * ======================================== */
+.emptyState {
+  text-align: center;
+  padding: 60px 20px !important;
+}
+
+.emptyIcon {
+  color: var(--muted-foreground);
+  margin-bottom: 16px;
+}
+
+.emptyText {
+  font-size: 16px;
+  color: var(--muted-foreground);
+  margin-bottom: 20px;
+}
+
+/* ========================================
+ * 响应式设计
+ * ======================================== */
+@media (max-width: 1200px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .toolbarLeft,
+  .toolbarRight {
+    flex-wrap: wrap;
+  }
+
+  .searchInput {
+    width: 100%;
+  }
+
+  .filterTabs {
+    flex-wrap: wrap;
+  }
+
+  .dataTable {
+    display: block;
+    overflow-x: auto;
+  }
+}
