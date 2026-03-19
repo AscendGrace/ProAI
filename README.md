@@ -3,14 +3,24 @@
 <h1> 🛡️ ProAI 大模型安全评估平台 </h1>
 
 <p>
-一款专业的 AI 大模型安全评估与测试平台，支持多种安全标准和自动化测试流程。
+ProAI 是一个聚焦于 AI 安全测试与代码风险审计的开源平台，适用于大模型安全评估、提示词测试集管理，以及 MCP 源码包的自动化扫描分析。
+项目同时提供前端操作台与后端评估服务，支持 OpenAI / Ollama 模型接入，能够帮助团队更快完成模型风险测试、漏洞发现、评估留档和结果复盘。
 <p>
+
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue.svg)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-19.2-61dafb.svg)](https://reactjs.org/)
 [![Express](https://img.shields.io/badge/Express-5.2-green.svg)](https://expressjs.com/)
 [![License](https://img.shields.io/badge/license-AGPL--3.0-yellow)](https://github.com/AscendGrace/ProAI/blob/main/LICENSE)
 </div>
+
+- 双评估能力：同时支持大模型安全评测与 MCP 服务代码安全扫描
+- 多测试集管理：内置 TC260、通用测试集与自定义测试集，支持批量导入、导出和搜索
+- 自动化评测流程：从提示词抽取、模型调用、裁判模型判定到结果落库全流程自动执行
+- 评估报告可视化：提供通过率、趋势、最近任务、评分结果等可视化展示
+- MCP 风险审计：支持上传 MCP 项目压缩包，自动分析代码结构、潜在漏洞与可利用性
+- 模型接入灵活：支持配置目标模型与裁判模型，兼容 OpenAI 与 Ollama
+- 本地持久化：基于 SQLite 保存评估任务、明细记录、提示词库与系统配置
 
 ## 目录
 
@@ -23,8 +33,7 @@
 - [贡献指南](#贡献指南)
 - [开源协议](#开源协议)
 - [特别鸣谢](#特别鸣谢)
-- [关于我们](#关于我们)
-
+- [不止于此](#不止于此)
 ##  功能特色
 
 ###  AI 模型安全评估
@@ -186,8 +195,7 @@ MCP 扫描器采用多阶段流水线架构：
 本项目通用测试集使用 Rogue Security 提供的数据集：
 https://huggingface.co/datasets/rogue-security/prompt-injections-benchmark
 
-## 关于我们
+## 不止于此
 
-华清未央科技有限公司成立于2023年12月。是全球首家机器语言大模型供应商。公司秉持着做网络空间智能体的愿景，专注突破人工智能技术赋能网络空间，致力于提供软件功能开发、性能优化、安全分析的标准化、智能化解决方案。公司和团队在软件人工分析、自动分析、智能分析方面深耕十余年，研究成果处于世界领先水平。
-
-[![Logo](img/logo.png)](https://huaqing.org.cn)
+![V2.0](img/V2.0.png)
+*By the way —— 更强大的 ProAI v2.0 商用版 COMING SOON*
