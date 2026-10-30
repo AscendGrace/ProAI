@@ -14,7 +14,7 @@ app.use(express.json({ limit: '4mb' }))
 
 const db = await openDb()
 const mcpStore = new McpScanStore(db)
-const upload = multer({ storage: multer.memoryStorage() })
+const upload = multer({ storage: multer.memoryStorage(), limits: { fieldArrayIndexLimit: 1000, fieldNestingDepth: 8 } })
 const fileBuffers = new Map<string, Buffer>()
 
 app.get('/api/health', (_req, res) => {
@@ -268,7 +268,7 @@ app.delete('/api/prompts/:id', async (req, res) => {
 })
 
 app.post('/api/prompts/bulk-delete', async (req, res) => {
-  const schema = z.object({ ids: z.array(z.string().min(1)).min(1) })
+  const schema = z.object({ ids: z.array(z.string().min(1)).min(1).max(1000) })
   const parsed = schema.safeParse(req.body)
   if (!parsed.success) {
     res.status(400).json({ error: parsed.error.message })
@@ -589,7 +589,7 @@ app.delete('/api/evaluations/:id', async (req, res) => {
 })
 
 app.post('/api/evaluations/bulk-delete', async (req, res) => {
-  const schema = z.object({ ids: z.array(z.string().min(1)).min(1) })
+  const schema = z.object({ ids: z.array(z.string().min(1)).min(1).max(1000) })
   const parsed = schema.safeParse(req.body)
   if (!parsed.success) {
     res.status(400).json({ error: parsed.error.message })
